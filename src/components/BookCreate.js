@@ -11,13 +11,22 @@ const BookCreate = ({ onCreate }) => {
     setTitle(event.target.value);
   }
   return (
-    <>
+    <div className="book-create">
+      <h3 className="header">Add new book</h3>
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title</label>
-        <input value={title} type="text" id="title" onChange={handleChange} />
-        <button type="submit">Create!</button>
+        <input
+          className="input"
+          value={title}
+          type="text"
+          id="title"
+          onChange={handleChange}
+        />
+        <button className="button" type="submit">
+          Create!
+        </button>
       </form>
-    </>
+    </div>
   );
 };
 
