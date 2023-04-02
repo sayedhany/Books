@@ -4,7 +4,7 @@ const BookCreate = ({ onCreate }) => {
   const [title, setTitle] = useState("");
   function handleSubmit(event) {
     event.preventDefault();
-    onCreate(title);
+    if (title) onCreate(title);
     setTitle("");
   }
   function handleChange(event) {
@@ -16,7 +16,7 @@ const BookCreate = ({ onCreate }) => {
       <form onSubmit={handleSubmit}>
         <label htmlFor="title">Title</label>
         <input
-          className="input"
+          className="input "
           value={title}
           type="text"
           id="title"
