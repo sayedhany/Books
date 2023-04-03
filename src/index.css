@@ -10631,9 +10631,9 @@ a.has-text-danger-dark:hover {
   padding: 20px;
 }
 .book-create {
-  background-color: #00d1b2;
+  background-color: #f5d1b2;
   bottom: 0;
-  padding: 20px 40px 30px;
+  padding: 10px 40px 15px;
   position: fixed;
   width: 100%;
 }
@@ -10673,6 +10673,7 @@ a.has-text-danger-dark:hover {
   padding: 15px;
   width: 300px;
   font-size: 1.5rem;
+  text-align: center;
 }
 .book-edit {
   align-items: flex-start;
@@ -10744,4 +10745,12 @@ a.has-text-danger-dark:hover {
   transform-origin: center center;
   width: 20px;
   z-index: 10;
+}
+h1 {
+  text-align: center;
+}
+.book-show img {
+  padding: 1rem;
+  width: 90%;
+  border-radius: 30px;
 }
