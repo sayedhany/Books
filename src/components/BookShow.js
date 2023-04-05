@@ -7,14 +7,17 @@ const BookShow = ({ book, onDelete, onEdit }) => {
     onEdit(id, title);
     setShowEdit(false);
   }
-  let content = <h3>{book.title}</h3>;
-  if (showEdit) {
-    content = <BookEdit handleSubmit={handleSubmit} book={book} />;
-  }
+
   return (
     <div className="book-show">
       <img src={`https://picsum.photos/seed/${book.id}/200/300`} alt="books" />
-      <div>{content}</div>
+      <div>
+        {showEdit ? (
+          <BookEdit handleSubmit={handleSubmit} book={book} />
+        ) : (
+          <h3>{book.title}</h3>
+        )}
+      </div>
       <div className="actions">
         <button className="edit" onClick={() => setShowEdit(!showEdit)}>
           Edit
