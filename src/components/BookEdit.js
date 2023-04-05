@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const BookEdit = ({ book, onEdit, setShowEdit, handleSubmit }) => {
+const BookEdit = ({ book, handleSubmit }) => {
   const [title, setTitle] = useState(book.title);
   function handleChane(e) {
     setTitle(e.target.value);
