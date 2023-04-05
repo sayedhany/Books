@@ -1,10 +1,12 @@
 import { createContext, useState, useEffect } from "react";
 import axios from "axios";
+import { useContext } from "react";
 const initState = {
   books: [],
   editBookById: () => {},
   deleteBookById: () => {},
   createBook: () => {},
+  fetchBooks: () => {},
 };
 const url = "http://localhost:3001/books";
 const BookContext = createContext(initState);
@@ -16,9 +18,7 @@ function Provider({ children }) {
     const { data } = await axios.get(url);
     setBooks(data);
   }
-  useEffect(() => {
-    fetchBooks();
-  }, []);
+
   async function editBookById(id, title) {
     const { data } = await axios.put(`${url}/${id}`, {
       title,
@@ -55,11 +55,15 @@ function Provider({ children }) {
         editBookById,
         deleteBookById,
         createBook,
+        fetchBooks,
       }}
     >
       {children}
     </BookContext.Provider>
   );
 }
-export { Provider };
+function useBooks() {
+  return useContext(BookContext);
+}
+export { Provider, useBooks };
 export default BookContext;

@@ -1,16 +1,12 @@
 {
   "books": [
     {
-      "title": "sayed",
+      "title": "sayed hany",
       "id": 1
     },
     {
       "title": "hany",
       "id": 2
-    },
-    {
-      "title": "rashed",
-      "id": 3
     }
   ]
 }
